@@ -1,13 +1,17 @@
-import { Modal, PrimaryButton } from '@fluentui/react';
+import { Icon, Modal, Panel, PanelType, PrimaryButton, IconButton } from '@fluentui/react';
 import React, { Component } from 'react'
 import Form from './Form';
 import edit from '../Images/edit.png'
-import {flagforbutton,} from '../Prod';
+import {flagforbutton } from  '../Services/DisplayFlag'
+import { prod } from '../Services/ProductArray';
+import '../Scss/Common.scss';
+import '../Scss/Display.scss';
 interface Props {
 
     options:any;    
     parentCallback:Function;
     delete:Function;
+    closeDisplay:Function
     product: {
 
         id: number,
@@ -15,7 +19,7 @@ interface Props {
         namee: string,
         type: string,
         discipline: string,
-        sponsor: string,
+        sponsor: [string],
         desc: string,
         scope: string, target: string,
         relprod: string,
@@ -41,6 +45,7 @@ class Display extends React.Component<Props, State> {
         }        
         
     }
+    
 
     edit(e: any) {
         flagforbutton(2)
@@ -48,6 +53,8 @@ class Display extends React.Component<Props, State> {
         this.setState({
             editf: true, isOpenForm:true
         });
+
+       
         
         
         
@@ -71,6 +78,7 @@ class Display extends React.Component<Props, State> {
         this.setState({
             isOpenForm:false
         })
+        this.props.closeDisplay()
     }
     render() {
     
@@ -80,19 +88,19 @@ class Display extends React.Component<Props, State> {
                 <div>
                         <div className="flexrow">
                         <h2 className="h1">{this.props.product.namee}</h2>
-                        <button className="editimg" onClick={this.edit.bind(this)}><img src={edit} width="30px" height="30px"></img></button>
-                        <Modal isOpen={this.state.isOpenForm}> 
+                        <button className="editimg" onClick={this.edit.bind(this)}><IconButton iconProps={{iconName:"Edit"}}></IconButton></button>
+                        <Panel type={PanelType.extraLarge} isOpen={this.state.isOpenForm} onDismiss={this.closeForm.bind(this)}> 
                     <div>   
-                <div className="modal">
+                <div>
 
 
-<div className="modal-content">
-  <span className="close" onClick={this.closeForm.bind(this)}>&times;</span>
+<div>
+ 
                         {
 
-                            this.state.editf ? <Form options={this.props.options} delete={this.delete.bind(this)} parentCallback={this.editproduct.bind(this)} draft={this.editproduct.bind(this)} length={this.props.product.id}  productProp={this.props.product} flag={1}/> : null
+                            this.state.editf ? <Form options={this.props.options} delete={this.delete.bind(this)} parentCallback={this.editproduct.bind(this)} draft={this.editproduct.bind(this)} length={this.props.product.id}  productProp={this.props.product} flag={1} flagSubmitUpdate={false}/> : null
                         }
-</div></div></div></Modal>
+</div></div></div></Panel>
                         
                         </div>
                         

@@ -1,0 +1,86 @@
+
+
+  $color-blue:#004e8c;
+  $color-red:red;
+
+.deleteModal{
+    padding:10px
+  }
+  .deleteModalButtonNo{
+    background-color: $color-blue;
+    margin:40px 50px 0px 50px 
+  
+  }
+  .deleteModalButtonYes{
+    background-color: $color-blue;
+    margin:40px 50px 0px 100px 
+  }
+
+  .red{
+    color:$color-red;
+    padding-left: 4px;
+  }
+  
+
+  #name_error , #type_error , #dis_error, #desc_error #sponsor_error #scope_error{
+    margin:5px 0px 2px 0px; color: $color-red;}
+
+
+    .error{
+        margin:5px 0px 2px 0px; color:$color-red;
+      }
+
+
+      #update{
+        margin:20px 20px 0 80%;
+        
+        background-color:$color-blue
+        
+      }
+      #delete{
+       
+        margin-top:20px;
+         
+         background-color: white;
+         color: $color-blue;
+         border-color:$color-blue;
+      
+      }
+
+
+      #submit{
+        margin:20px 20px 0 80%;
+        background-color: $color-blue;  
+      }
+      
+      
+      
+      #Draft{
+        margin-top:20px;
+        border-color: $color-blue;
+        background-color: white;
+        color: $color-blue;
+      }
+
+      .input{
+        margin-right: 30px;
+        width:620px;
+        
+      }
+      .inputdate{
+        margin-right:25px;
+        width:620px;
+        height:30px;
+        
+      }
+      .input1{
+        margin-left: 285px;
+        width:620px;
+        
+      }
+      label{
+        color:$color-blue;
+        padding-bottom: 2px;
+        font-weight: bold;
+      }
+      

@@ -1,0 +1,83 @@
+
+.flexRowML20{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    
+  }
+
+
+  .searchBar{
+    width: 50%;
+    float:left;
+    margin:0px 100px 0px 15%;
+  }
+
+  $color:#004e8c;
+
+  .heading{
+    color:$color
+  }
+
+
+  .displayButtons{
+    font-size: 16px;
+    margin-right: 5px;
+    background-color: white;
+    color:#004e8c;
+    border:none;
+    padding-left: 0px;
+    padding-right: 10px;
+  }
+  button.displayButtons:hover{
+    background-color: white;
+    color:#004e8c;
+    border:none
+  }
+  button.displayButtons:focus{
+    background-color: white;
+  
+    
+  }
+  
+  
+  button.displayButtons:visited{
+    background-color: white;
+  
+    
+  }
+
+
+  .prod-cards{
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    flex-direction: row;
+    
+  }
+  
+  .search{
+    width:1000px;
+  }
+  
+  .prod-card{
+  
+      width: 22%;
+      height: 14%;
+      margin:0px 20px 40px 0px;
+      border: 1px solid lightgrey;
+      border-left: 3px solid  $color
+      
+  
+  
+  }
+  .card{
+    color:$color;
+    padding: 5px;
+  }
+  
+  .card>p{
+    color:black;
+    padding: 5px;
+  }
